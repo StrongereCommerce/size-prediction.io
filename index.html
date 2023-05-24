@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shirt Measurement</title>
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="./assets/css/style.css" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- Measurement Modal Section -->
+        <section class="measurement-modal-section">
+            <div class="container">
+                <div class="measurement-modal-content">
+                    <div class="measurement-modal-nav">
+                        <div class="measurement-modal-logo">S</div>
+                        <button class="measurement-modal-close">
+                            <svg
+                                width="13"
+                                height="16"
+                                viewBox="0 0 13 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M12.6113 16H10.5381L6.31641 9.09277L2.01953 16H0.0859375L5.30664 7.79297L0.44043 0.294922H2.45996L6.35938 6.51465L10.291 0.294922H12.2354L7.36914 7.72852L12.6113 16Z"
+                                    fill="black"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Measurement Modal Form -->
+                    <div class="measurement-modal-form-container">
+                        <h2 class="measurement-modal-title">
+                            Enter Your <br />
+                            Measurement
+                        </h2>
+                        <form class="measurement-modal-form" id="shirtSizeForm">
+                            <div class="measurement-modal-row">
+                                <div class="input-row">
+                                    <input
+                                        type="number"
+                                        name="height_feet"
+                                        placeholder="Height"
+                                        id="heightFeet"
+                                        min="0"
+                                        required
+                                    />
+                                    <label for="heightFeet">Feet</label>
+                                </div>
+
+                                <div class="input-row">
+                                    <input
+                                        type="number"
+                                        name="height_inches"
+                                        id="heightInches"
+                                        min="0"
+                                        required
+                                    />
+                                    <label for="heightInches">Inches</label>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <input
+                                    type="number"
+                                    name="weight"
+                                    placeholder="Weight"
+                                    id="weight"
+                                    min="0"
+                                    required
+                                />
+                                <label for="weight">Ibs</label>
+                            </div>
+                            <div class="input-row">
+                                <input
+                                    type="number"
+                                    name="age"
+                                    placeholder="Age"
+                                    id="age"
+                                    min="0"
+                                    required
+                                />
+                                <label for="age">Years</label>
+                            </div>
+                            <div class="input-row">
+                                <input
+                                    type="number"
+                                    name="waist"
+                                    placeholder="Paints waist size"
+                                    id="waist"
+                                    min="0"
+                                    required
+                                />
+                                <label for="waist">Inches</label>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="measurement-modal-submit"
+                            >
+                                Find My Size
+                            </button>
+                        </form>
+                    </div>
+                    <!-- Measurement Modal Form End -->
+
+                    <!-- Measurement Modal Loading -->
+                    <div class="measurement-modal-loading-container hidden">
+                        <h2 class="measurement-modal-title">
+                            Our AI technology <br />
+                            is calculating your <br />
+                            collar size and fit
+                        </h2>
+
+                        <div class="measurement-modal-img">
+                            <img
+                                src="./assets/images/shirt_loading.png"
+                                alt="Shirt"
+                            />
+                        </div>
+
+                        <div class="measurement-modal-loading">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <!-- Measurement Modal Loading End -->
+
+                    <!-- Measurement Modal Result -->
+                    <div class="measurement-modal-result-container hidden">
+                        <div class="measurement-modal-img">
+                            <img
+                                src="./assets/images/shirt_result.png"
+                                alt="Shirt"
+                            />
+                        </div>
+
+                        <h2 class="measurement-modal-title">
+                            Your <br />
+                            recommended <br />
+                            size is <br />
+                            <span class="measurement-modal-result"
+                                >15 Slim</span
+                            >
+                        </h2>
+
+                        <h3 class="measurement-modal-recommendation">
+                            For a roomier fit try a Classic Fit
+                        </h3>
+
+                        <button class="measurement-modal-restart">
+                            Start again
+                        </button>
+                    </div>
+                    <!-- Measurement Modal Result End -->
+                </div>
+            </div>
+        </section>
+        <!-- Measurement Modal Section End -->
+
+        <!-- Scripts -->
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>
