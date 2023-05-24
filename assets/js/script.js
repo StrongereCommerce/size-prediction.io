@@ -88,11 +88,8 @@ function calculateBMIFit(heightFeet, heightInches, weight, age, waist) {
     const bmi = weightKilograms / (heightMeters * heightMeters);
 
 
-    // let collarDeviation = Math.abs(collarSize - roundedCollarSize);
+    let collarDeviation = Math.abs(collarSize - roundedCollarSize);
 
-    // sleeveLength = Math.ceil(
-    //     60 + 0.4 * height + 0.15 * weight - 0.4 * waist + 0.35 * age
-    // );
 
     if (bmi < 17) {
         bmiFit = "Super Slim";
@@ -107,6 +104,11 @@ function calculateBMIFit(heightFeet, heightInches, weight, age, waist) {
     let mlFit = fitValue; // assume fitValues is already defined based on machine learning model
 
     const collarThreshold = 0.5; // this can be adjusted based on your own data and customer feedback
+    console.log(`mlFit- ${mlFit}`)
+    console.log(`bmiFit- ${bmiFit}`)
+    console.log(`collarDeviation- ${collarDeviation}`)
+    console.log(`collarSize- ${collarSize}`)
+
 
     // Compare the fits first
     if (mlFit != bmiFit) {
