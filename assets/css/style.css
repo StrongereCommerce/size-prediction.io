@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    font-family: "Sora", sans-serif;
+    letter-spacing: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: #d4d9e5;
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Measurement Modal */
+
+.measurement-modal-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5rem 1rem;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.measurement-modal-section > .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+.measurement-modal-content {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 2rem 3rem 2.5rem;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+
+.measurement-modal-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.measurement-modal-logo {
+    font-size: 3.25rem;
+    font-weight: 700;
+    color: #a09ffb;
+}
+
+.measurement-modal-close {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 0.25s ease;
+    transition: -webkit-transform 0.25s ease;
+    -o-transition: transform 0.25s ease;
+    transition: transform 0.25s ease;
+    transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+    will-change: transform;
+}
+
+.measurement-modal-close:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.measurement-modal-content h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.measurement-modal-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+}
+
+.measurement-modal-row > div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
+}
+
+.input-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.input-row label {
+    min-width: 50px;
+    min-width: 50px;
+    font-size: 0.75rem;
+    color: #666666;
+}
+
+.measurement-modal-form input {
+    font-size: 1.125rem;
+    width: 100%;
+    padding-bottom: 0.625rem;
+    padding-right: 0.625rem;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+
+.measurement-modal-form input::-webkit-input-placeholder {
+    color: #000;
+}
+
+.measurement-modal-form input::-moz-placeholder {
+    color: #000;
+}
+
+.measurement-modal-form input:-ms-input-placeholder {
+    color: #000;
+}
+
+.measurement-modal-form input::-ms-input-placeholder {
+    color: #000;
+}
+
+.measurement-modal-form input::placeholder {
+    color: #000;
+}
+
+.measurement-modal-submit {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    color: #fff;
+    border: 1px solid #413ef7;
+    border-radius: 10px;
+    background-color: #413ef7;
+    cursor: pointer;
+    -webkit-transition: 0.25s ease;
+    -o-transition: 0.25s ease;
+    transition: 0.25s ease;
+}
+
+.measurement-modal-submit:hover {
+    color: #413ef7;
+    background-color: transparent;
+}
+
+.measurement-modal-form input::-webkit-outer-spin-button,
+.measurement-modal-form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.measurement-modal-img {
+    max-width: 200px;
+    margin: 0 auto 1rem;
+    text-align: center;
+}
+
+.measurement-modal-img img {
+    width: 100%;
+    height: auto;
+}
+
+/* Measurement Modal Loading */
+
+.measurement-modal-loading {
+    position: relative;
+    width: 100px;
+    height: 80px;
+    margin: 1rem auto 0;
+}
+
+.measurement-modal-loading div {
+    position: absolute;
+    top: 33px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #a09efb;
+    -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.measurement-modal-loading div:nth-child(1) {
+    left: 8px;
+    background: #413ef7;
+    -webkit-animation: measurement-modal-loading1 0.6s infinite;
+    animation: measurement-modal-loading1 0.6s infinite;
+}
+
+.measurement-modal-loading div:nth-child(2) {
+    left: 8px;
+    -webkit-animation: measurement-modal-loading2 0.6s infinite;
+    animation: measurement-modal-loading2 0.6s infinite;
+}
+
+.measurement-modal-loading div:nth-child(3) {
+    left: 32px;
+    -webkit-animation: measurement-modal-loading2 0.6s infinite;
+    animation: measurement-modal-loading2 0.6s infinite;
+}
+
+.measurement-modal-loading div:nth-child(4) {
+    left: 56px;
+    -webkit-animation: measurement-modal-loading2 0.6s infinite;
+    animation: measurement-modal-loading2 0.6s infinite;
+}
+
+.measurement-modal-loading div:nth-child(5) {
+    left: 80px;
+    -webkit-animation: measurement-modal-loading3 0.6s infinite;
+    animation: measurement-modal-loading3 0.6s infinite;
+}
+
+@-webkit-keyframes measurement-modal-loading1 {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes measurement-modal-loading1 {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes measurement-modal-loading3 {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+@keyframes measurement-modal-loading3 {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+@-webkit-keyframes measurement-modal-loading2 {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(24px, 0);
+        transform: translate(24px, 0);
+    }
+}
+
+@keyframes measurement-modal-loading2 {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(24px, 0);
+        transform: translate(24px, 0);
+    }
+}
+
+/* Measurement Modal Result */
+
+.measurement-modal-result {
+    color: #413ef7;
+}
+
+.measurement-modal-result-container h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.measurement-modal-restart {
+    display: block;
+    font-size: 0.875rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 3rem auto 0;
+}
+
+/* Media Queries */
+
+@media (max-width: 576px) {
+    .measurement-modal-section {
+        padding: 2rem 1rem;
+    }
+
+    .measurement-modal-section > .container {
+        display: block;
+    }
+
+    .measurement-modal-content {
+        padding: 2rem;
+    }
+
+    .measurement-modal-row {
+        gap: 0.25rem;
+    }
+
+    .measurement-modal-logo {
+        font-size: 2.5rem;
+    }
+
+    .measurement-modal-content h2 {
+        font-size: 1.75rem;
+        margin-bottom: 3rem;
+    }
+
+    .measurement-modal-form input {
+        font-size: 1rem;
+    }
+
+    .measurement-modal-result-container h3 {
+        font-size: 1.25rem;
+    }
+
+    .measurement-modal-submit {
+        font-size: 0.875rem;
+        margin-top: 0;
+    }
+
+    .measurement-modal-img {
+        max-width: 180px;
+    }
+}
